@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs')%>
+    <div class="content">
+        <div class="center-container mb-100">
+            <div class="event-heading">
+                <h3 class="dis-in-bl">
+                    Welcome to MelodyMart!!!
+                </h3>
+            </div>
+
+
+            <table id="#table">
+                <tr>
+                    <td>
+
+                        <p>
+                            <%=trade.offerItemId.category%>
+                        </p>
+                        <a id="profilelinks" href="/trade/<%=trade.offerItemId._id%>">
+                            <%=trade.offerItemId.title%>
+                        </a>
+                    </td>
+                    <td>
+
+                        <p>
+                            <%=trade.category%>
+                        </p>
+                        <a id="profilelinks" href="/trades/<%=trade.id%>">
+                            <%=trade.title%>
+                        </a>
+                    </td>
+                    <td>
+                        <form style="float: left;">
+                            <button class="button update-btn" type="submit" formmethod="POST"
+                                formaction="/trade/offer/<%=trade.offerItemId.id%>/<%=trade.id%>/accept">Accept</button>
+                            <button class="button delete-btn" type="submit" formmethod="POST"
+                                formaction="/trade/offer/reject/<%=trade.id%>/<%=trade.offerItemId.id%>">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs')%>

@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs') %>
+
+    <form style="padding-top: 120px;padding-left: 50px;" action="/" method="POST"> 
+        <label for="BookType">Book Type: </label><br>
+        <input type="text" id="BookType" name="category" placeholder="Book Type" required><br>
+        <label for="title">Book Name: </label><br>
+        <input type="text" id="title" name="title" placeholder="Book Name" required><br>
+        <label for="Professor">ImageURL: </label><br>
+        <input type="text" id="Professor" name="imageURL" placeholder="imageURL" required><br>
+        <label for="Specifications">Specifications if any: </label><br>
+        <textarea id="Specifications" name="content" rows="5" cols="33" placeholder="Specifications" required minlength="10"></textarea><br><br>
+        <button for="Get car">Get Book</button>
+    </form>
+
+<%- include('../partials/footer.ejs') %>

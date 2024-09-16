@@ -1,0 +1,145 @@
+<%- include('../partials/header.ejs')%>
+    <div class="content">
+        <div class="center-container mb-100">
+            <div class="event-heading">
+                <h3 class="dis-in-bl">
+                    <%=user.firstName%>'s Trades
+                </h3>
+            </div>
+            <% if(books.length){ %>
+
+                <table id="#table">
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <% books.forEach(book=> { %>
+                        <tr>
+                            <td><a href='/book/<%=book._id%>'>
+                                    <%= book.title %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= book.category %>
+                            </td>
+                            <td>
+                                <%= book.status %>
+                            </td>
+                            <td>
+                                <form style="float: left;">
+                                    <button class="button update-btn" type="submit" formmethod="GET"
+                                        formaction="/<%= book._id%>/edit">Edit</button>
+                                    <button class="button delete-btn" type="submit" formmethod="POST"
+                                        formaction="/<%= book._id%>?_method=DELETE">Delete</button>
+                                    <% if(book.status==='Pending' && book.offerItemId){%>
+                                        <button type="submit" class="button" formmethod="GET"
+                                            formaction="/trade/offer/manage/<%=book._id%>">
+                                            Manage Offer
+                                        </button>
+                                        <% }%>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </table>
+                <% } else { %>
+                    <p style="margin: 20px auto;width: 95%;">There are no books to display.</p>
+                    <% } %>
+        </div>
+
+
+<% console.log("watchlist------>",watchlist) %>
+        <% if(watchlist.length){ %>
+            <div class="event-heading">
+                <h3 class="dis-in-bl">
+                    <%=user.firstName%>'s watchlist
+                </h3>
+            </div>
+
+                <table id="#table">
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <% watchlist.forEach(book=> { %>
+                        <tr>
+                            <td><a href='/book/<%=book._id%>'>
+                                    <%= book.title %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= book.category %>
+                            </td>
+                            <td>
+                                <%= book.status %>
+                            </td>
+                            <td>
+                                <form style="float: left;">
+                                    <% if(book.status==='Available' ){%>
+                                        <button class="button update-btn" type="submit" formmethod="GET"
+                                            formaction="/trade/offer/<%=book._id%>">Trade</button>
+                                        <% }%>
+                                            <button class="button delete-btn" type="submit" formmethod="POST"
+                                                formaction="/trade/unwatch/<%=book._id%>?_method=PUT">Unwatch</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </table>
+                <% } %>
+
+
+
+
+
+
+                
+        <% if(offers.length){ %>
+            <div class="event-heading">
+                <h3 class="dis-in-bl">
+                    <%=user.firstName%>'s OfferList
+                </h3>
+            </div>
+                <table id="#table">
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <% offers.forEach(book=> { %>
+                        <tr>
+                            <td><a href='/book/<%=book._id%>'>
+                                    <%= book.title %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= book.category %>
+                            </td>
+                            <td>
+                                <%= book.status %>
+                            </td>
+                            <td>
+                                <form style="float: left;">
+                                    <button class="button delete-btn" type="submit" formmethod="POST"
+                                        formaction="/trade/offer/reject/<%=book._id%>/<%=book.offerItemId.id%>">Cancel Offer</button>
+                        </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </table>
+                <% } %>
+
+
+
+
+
+
+
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

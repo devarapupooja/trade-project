@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs')%>
+    <div class="content">
+        <div class="center-container mb-100">
+            <div class="event-heading">
+                <h3 class="dis-in-bl">
+                    <%=user.firstName%>'s Trades
+                </h3>
+            </div>
+            <% if(bookDetails.length){ %>
+                <% console.log("id----",id)%>
+
+                <form action="/trade/offer/<%=id%>" method="POST">
+                    <table id="#table">
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Book Model</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                        </tr>
+                        <% bookDetails.forEach(book=> { %>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="tradeItem" value="<%=book._id%>">
+                                </td>
+                                <td><a id="profilelinks" href='/trade/<%=book._id%>'>
+                                    <%= book.title %>
+                                </a>
+                                </td>
+                                <td>
+                                    <%= book.category %>
+                                </td>
+                                <td>
+                                    <%= book.status %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </table>
+                    <button class="button update-btn" type="submit">Trade</button>
+                </form>
+                    <% } else { %>
+                        <p style="margin: 20px auto;width: 95%;">There are no Books available to Trade</p>
+                        <% } %>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs')%>

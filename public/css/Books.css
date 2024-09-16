@@ -1,0 +1,130 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header,
+footer {
+    position: absolute;
+    background-color: lightblue;
+    width: 100%;
+    color: white;
+}
+
+header h2 {
+    position: absolute;
+    margin-top: 1px;
+    left: 5;
+}
+
+
+section {
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+h3,
+p {
+    top: 70%;
+}
+
+header b{
+    position: absolute;
+    left: 9%;
+    top: 35%;
+    color: black;
+    font-size: 20px;
+}
+
+header {
+    height: 10vh;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+footer {
+    height: 15vh;
+    bottom: 0;
+}
+
+footer a {
+    position: relative;
+    left: 20px;
+    top: 30%;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    position: relative;
+    top: 70px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: gray;
+}
+
+.main a {
+    position: relative;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.headnav {
+    position: absolute;
+    width: 100%;
+}
+
+.headnav a {
+    position: relative;
+    left: 80%;
+    top: 28px;
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+}
+
+.socialmedia a {
+    position: relative;
+    left: 90%;
+    font-size:32px;
+    color: black;
+}
+
+.success {
+    margin: 20px auto;
+    background: rgba(108, 192, 112, 0.7);
+    color: #fff;
+    width: 80%;
+    text-align: center;
+    padding: 10px 10px;
+  }
+  
+  .error {
+    margin: 20px auto;
+    background: rgba(225, 29, 29, 0.7);
+    color: #fff;
+    width: 80%;
+    text-align: center;
+    padding: 10px 10px;
+  }
+  #table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    background-color: white;
+    margin: 20px auto;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }

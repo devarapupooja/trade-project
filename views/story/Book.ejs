@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs') %>
+    <section style="color: black;">
+        <img src="<%= book.imageURL%>" alt="" width="400" height="200">
+        <h3><%= book.title%></h3>
+        <br>
+        <h4>Description:</h4>
+        <p><%= book.content%>
+        </p>
+        <% if(user == book.author._id) { %>
+        <form>
+            <button type="submit" formmethod="GET" formaction="/<%= book._id%>/edit">Edit</button>
+            <button type="submit" formmethod="POST" formaction="/<%= book._id%>?_method=DELETE">Delete</button>
+
+        </form>
+        <% } else {%>
+            <form>
+              <%  if(book.status==='Available'){%>
+              <button type="submit" formmethod="GET" formaction="/trade/offer/<%=book._id%>">Trade</button>
+              <%} 
+              if(canWatch){%>
+              <button type="submit" formmethod="POST"
+                formaction="/trade/watch/<%=book._id%>?_method=PUT">Watch</button>
+              <%}else{%>
+                <button type="submit" formmethod="POST"
+                  formaction="/trade/unwatch/<%=book._id%>?_method=PUT">Unwatch</button>
+                <%}%>
+            </form>
+        <% } %>
+    </section>
+
+
+<%- include('../partials/footer.ejs') %>

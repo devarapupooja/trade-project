@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer {
+    position: absolute;
+    background-color: lightblue;
+    width: 100%;
+    color: white;
+}
+
+header h2 {
+    position: absolute;
+    margin-top: 1px;
+    left: 5;
+}
+
+form {
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 30%;
+    overflow: hidden;
+    color: white;
+}
+
+form button {
+    background-color: rgb(116, 108, 122);
+    color: white;
+}
+
+header b{
+    position: absolute;
+    left: 9%;
+    top: 35%;
+    color: black;
+    font-size: 20px;
+}
+
+header {
+    height: 10vh;
+    position: relative;
+}
+
+footer {
+    height: 10vh;
+    bottom: 0;
+    margin-top: 15%;
+}
+
+footer a {
+    position: relative;
+    left: 20px;
+    top: 30%;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    position: relative;
+    top: 70px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: gray;
+}
+
+.main a {
+    position: relative;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.headnav {
+    position: absolute;
+    width: 100%;
+}
+
+.headnav a {
+    position: relative;
+    left: 80%;
+    top: 28px;
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+}
+
+.socialmedia a {
+    position: relative;
+    left: 90%;
+    font-size:32px;
+    color: black;
+}

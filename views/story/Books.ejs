@@ -1,0 +1,24 @@
+<%- include('../partials/header.ejs') %>
+    
+    <section style="color: black;">
+        <% if(bookcategories.length){ %>
+            <% console.log("bookcategories.length",bookcategories.length) %>
+            <% bookcategories.forEach(category => { %>
+                <h4><%= category %></h4>
+                    <% if(books.length){ %>
+                        <% books.forEach(book => { 
+                            if (book.category === category) { %>
+                               <h5><a href="/book/<%= book.id %>"><%= book.title %></a></h5>
+                            <% } });
+                        } else { %>
+                            <p>There are no Books to display.</p>
+                    <% } %>
+            <% }); %>
+        <% } else { %>
+            <p>There are no categories to display.</p>
+        <% } %>
+    
+        
+    </section>
+
+<%- include('../partials/footer.ejs') %>

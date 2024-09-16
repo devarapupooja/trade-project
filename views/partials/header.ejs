@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Book Store</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/book.css">
+    <link rel="stylesheet" type="text/css" href="/css/books.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h2>
+            <a href="/"><img src="/images/Books.jpg" alt="" width="120" height="70"></a>
+        </h2>
+        <b class="home">Online Book Store</b>
+
+        <div class="headnav">
+            <a href="/newbook">Get Book</a>
+            <% if(!user){ %>
+                <a href="/users/login">Login</a>
+                <a href="/users/new">Sign up</a>
+                <% } else { %>  
+                    <a href="/users/profile">Profile</a>
+                    <a href="/users/logout">Logout</a>
+                    <% } %>
+
+        </div>
+        <div class="main"><a href="/books">Books</a></div>
+    </header>
+
+
+    <% if(errorMessages.length > 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+        <%});%>
+    <%}%>
+    
+    <% if(successMessages.length > 0) {%>
+        <% successMessages.forEach(message=>{%>
+            <div class='success'>
+                <%=message%>
+            </div>
+        <%});%>
+    <%}%>
