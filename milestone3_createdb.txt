@@ -1,0 +1,28 @@
+use booksdb
+
+db.createCollection("bookSchema")
+
+db.bookSchema.find(
+[
+  {
+    _id: ObjectId("642ce5d72946d00cf4d7426d"),
+    category: 'Fiction',
+    title: 'Pooja',
+    author: 'Akash',
+    content: 'Bjknsfkunwkeafj',
+    createdAt: ISODate("2023-04-05T03:07:03.426Z"),
+    updatedAt: ISODate("2023-04-05T03:07:03.426Z"),
+    __v: 0
+  },
+  {
+    _id: ObjectId("642ce6535626964c0c1282a7"),
+    category: 'Fictionhj',
+    title: 'jn',
+    author: 'jnnkln',
+    content: 'lknlklklknl',
+    createdAt: ISODate("2023-04-05T03:09:07.461Z"),
+    updatedAt: ISODate("2023-04-05T03:09:07.461Z"),
+    __v: 0
+  }
+]
+)
